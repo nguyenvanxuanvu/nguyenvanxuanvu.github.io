@@ -1,0 +1,64 @@
+## Basic Configuration
+baseurl = "https://example.com/"
+languageCode = "en"
+
+title = "Xuan Vu"
+theme = "hyde-hyde"
+
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+# googleAnalytics = "your-google-analytics-id"
+# enableRobotsTXT = true
+
+# summarylength = 30
+
+#paginate = 5
+
+## Site Settings
+[params]
+    author = "Author"
+    title = "Nguyen"
+    
+    authorimage = "/img/ava.png"
+    dateformat = "Jan 2, 2006"
+
+    # sidebar, copyright & license
+    # logoimage = "/img/ava.png"
+    copyright = "htr3n"
+    since = 2019
+    license = "CC BY-SA 4.0"
+    licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+    showBuiltWith = true
+
+    
+    highlightjs = true
+    highlightjsstyle = "github"
+
+    # Table of contents
+    #toc = none, "hugo", or "tocbot"
+
+## Social Accounts
+[params.social]
+    github = "nguyenvanxuanvu"
+    instagram = "xuanvu231"
+    linkedin = "nguyễn-văn-xuân-vũ-490b1b209"
+    facebook = "xuanvu.nguyenvan"
+    email = "nguyenvanxuanvu231@gmail.com"
+
+
+## Main Menu
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "Portfolio"
+    identifier = "portfolio"
+    weight = 200
+    url = "/portfolio/"
+[[menu.main]]
+    name = "About me"
+    identifier = "about"
+    weight = 300
+    url = "/about/"
