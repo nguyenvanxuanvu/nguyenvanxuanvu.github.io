@@ -1,5 +1,5 @@
 +++
-title = "Getting Started with Hugo"
+title = "Design a system for serving blogs to massive readers (10k tps)"
 description = ""
 tags = [
     "go",
@@ -7,46 +7,37 @@ tags = [
     "hugo",
     "development",
 ]
-date = "2022-05-12"
+date = "2022-05-13"
 categories = [
     "Development",
     "golang",
 ]
 +++
 
-## Step 1. Install Hugo
+## 1. Introduction
 
-Goto [hugo releases](https://github.com/spf13/hugo/releases) and download the
-appropriate version for your os and architecture.
+First of all, a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject.
 
-Save it somewhere specific as we will be using it in the next step.
+Today, there are more than 570 million blogs on the web.
 
-More complete instructions are available at [installing hugo](/overview/installing/)
+**And what is the purpose of a blog?**
 
-## Step 2. Build the Docs
+The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.
 
-Hugo has its own example site which happens to also be the documentation site
-you are reading right now.
+So to grow in the long term and connect with more people, you need a system that can handle a large and effective traffic for your blog/homepage. 
 
-Follow the following steps:
+And in this blog, specific to the problem here is **10000 transactions per second (10k tps)**. 
 
- 1. Clone the [hugo repository](http://github.com/spf13/hugo)
- 2. Go into the repo
- 3. Run hugo in server mode and build the docs
- 4. Open your browser to http://localhost:1313
+To do that, let's work together to find solutions for your own system.
 
-Corresponding pseudo commands:
+## 2. Point out the problems
 
-    git clone https://github.com/spf13/hugo
-    cd hugo
-    /path/to/where/you/installed/hugo server --source=./docs
-    > 29 pages created
-    > 0 tags index created
-    > in 27 ms
-    > Web Server is available at http://localhost:1313
-    > Press ctrl+c to stop
-
-Once you've gotten here, follow along the rest of this page on your local build.
+After researching and asking some more experienced people, I think to build the system as mentioned above, we will encounter 2 main types of problems:
+- **About product (blog):**
+  - Your blog is for the purpose of reading articles only ?
+  - In addition to serving articles, you are also welcome to allow your readers to send you messages or do other things such as donate ?
+- **About technology:**
+  - what technologies help your system achieve 10k tps ?
 
 ## Step 3. Change the docs site
 

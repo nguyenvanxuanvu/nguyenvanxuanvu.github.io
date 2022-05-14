@@ -1,5 +1,5 @@
 ## Basic Configuration
-baseurl = "https://example.com/"
+baseurl = "https://nguyenvanxuanvu.github.io/"
 languageCode = "en"
 
 title = "Xuan Vu"
@@ -24,11 +24,7 @@ theme = "hyde-hyde"
 
     # sidebar, copyright & license
     # logoimage = "/img/ava.png"
-    copyright = "htr3n"
-    since = 2019
-    license = "CC BY-SA 4.0"
-    licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
-    showBuiltWith = true
+    
 
     
     highlightjs = true
