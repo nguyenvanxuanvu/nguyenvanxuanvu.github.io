@@ -4,7 +4,7 @@ languageCode = "en"
 
 title = "Xuan Vu"
 theme = "hyde-hyde"
-
+publishDir = "docs"
 ## Hugo Built-in Features
 # disqusShortname = "your-disqus-shortname"
 # googleAnalytics = "your-google-analytics-id"

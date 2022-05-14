@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Xuan Vu</title>
+    <link>https://nguyenvanxuanvu.github.io/portfolio/</link>
+    <description>Recent content in Projects on Xuan Vu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://nguyenvanxuanvu.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EASYPARKING</title>
+      <link>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</guid>
+      <description>Easy Parking - Parking rental and lease application, creating an environment for parking space renters and the leases to interact with each other. Thereby bringing benefits to both users. The application is built as a webapp.</description>
+    </item>
+    
+    <item>
+      <title>SAVEOLE-FOOTBALL</title>
+      <link>https://nguyenvanxuanvu.github.io/portfolio/saveole/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/portfolio/saveole/</guid>
+      <description>Saveole-football From the needs of the market, to meet the needs of a platform that helps users find a football field as well as effectively manage the chain of football fields of the stadium owner. A football field management system or a series of smart mini-ball courts allows stadium owners and customers who want to book a pitch to have more intelligent, automated, attractive and efficient field use and management services.</description>
+    </item>
+    
+  </channel>
+</rss>
