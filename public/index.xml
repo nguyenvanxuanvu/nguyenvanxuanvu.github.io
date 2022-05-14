@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xuan Vu</title>
+    <link>https://example.com/</link>
+    <description>Recent content on Xuan Vu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Jan 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://nguyenvanxuanvu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Xuan Vu</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and society. I am currently working as a software developer at Zalopay.</description>
+    </item>
+    
+   
+    
+    
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://nguyenvanxuanvu.github.io/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+
+    <item>
+      <title>System design</title>
+      <link>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</guid>
+      <description>hello</description>
+    </item>
+    
+    <item>
+      <title>EASYPARKING</title>
+      <link>https://nguyenvanxuanvu.github.io/portfolio/dera/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/portfolio/dera/</guid>
+      <description>Easy Parking - Parking rental and lease application, creating an environment for parking space renters and the leases to interact with each other. Thereby bringing benefits to both users. The application is built as a webapp.</description>
+    </item>
+    
+    <item>
+      <title>SAVEOLE-FOOTBALL</title>
+      <link>https://nguyenvanxuanvu.github.io/portfolio/laramod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/portfolio/laramod/</guid>
+      <description>Saveole-football From the needs of the market, to meet the needs of a platform that helps users find a football field as well as effectively manage the chain of football fields of the stadium owner. A football field management system or a series of smart mini-ball courts allows stadium owners and customers who want to book a pitch to have more intelligent, automated, attractive and efficient field use and management services.</description>
+    </item>
+    
+  </channel>
+</rss>
