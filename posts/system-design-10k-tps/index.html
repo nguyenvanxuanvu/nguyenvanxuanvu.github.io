@@ -50,7 +50,7 @@ And what is the purpose of a blog?" />
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+<link rel="stylesheet" href="/scss/hyde-hyde.d3557f957f9db4a9cd4aac26c40b6ef1e96d23256ad56f7b407af46f9a567204.css" integrity="sha256-01V/lX&#43;dtKnNSqwmxAtu8eltIyVq1W97QHr0b5pWcgQ=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -216,7 +216,7 @@ And what is the purpose of a blog?" />
     
     
     <br/>
-    <i class="fas fa-clock"></i> 2 min read
+    <i class="fas fa-clock"></i> 5 min read
 </div>
 
 
@@ -250,8 +250,56 @@ And what is the purpose of a blog?" />
 <p>In this post, I choose to build a system for reading blogs. Other post data-oriented features such as sending messages or donations will be expanded in the future.</p>
 <p>As for the technology used and the specifics of the system, let&rsquo;s go to the next sections of the blog</p>
 <h2 id="3-main-architecture-for-my-system">3. Main architecture for my system</h2>
-<h2 id="4-some-ideas-for-mystem-to-gain-the-purpose-10k-tps">4. Some ideas for mystem to gain the purpose 10k tps</h2>
+<p><img src="/posts/basic.png" alt=""></p>
+<p>With a simple system that can only read blogs with a small number of users, the above basic components are enough to operate the system.
+The client sends a request to the web server and the web server retrieves data from the database and returns the information to the client.</p>
+<p>Sounds simple right?</p>
+<p><strong>But for technology, it&rsquo;s never enough.</strong></p>
+<p>In order to meet a larger amount of data access and a larger number of users, and improve performance, the above system faces many problems that need to be solved.</p>
+<h2 id="4-some-solutions-for-mystem-to-gain-the-purpose-10k-tps">4. Some solutions for mystem to gain the purpose 10k tps</h2>
+<p>With the design of the above sections, you can basically build a system for your blog. However, some of the following problems will occur when you have a large amount of traffic, specifically here is 10k tps. Here are the 2 main issues:</p>
+<ul>
+<li>
+<p><strong>Problem from client to web server layer:</strong></p>
+<ul>
+<li>
+<p>When we use the server to run the website or run the software, but when the server has a problem, we can&rsquo;t access it anymore, all the work is delayed, to switch to a backup server, we have to It takes a lot of time, delays a lot of work.</p>
+</li>
+<li>
+<p>When many connections to a server cause that server to be overloaded but the backup server is not running at all, so we will not use up all the performance and the access speed will be reduced.</p>
+</li>
+<li>
+<p>The system will reduce security because users can directly access the server.</p>
+</li>
+</ul>
+<p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>load balancer</strong></p>
+<p>Let talk about <strong>load balancer</strong></p>
+<p>Load balancers distribute incoming client requests to computing resources such as application servers and databases. In each case, the load balancer returns the response from the computing resource to the appropriate client. Load balancers are effective at:</p>
+<ul>
+<li>Preventing requests from going to unhealthy servers</li>
+<li>Preventing overloading resources</li>
+<li>Helping to eliminate a single point of failure</li>
+</ul>
+<p><img src="/posts/load-balancing.png" alt=""></p>
+<p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.</p>
+</li>
+<li>
+<p><strong>Problem from web server to database layer:</strong></p>
+<ul>
+<li>Let&rsquo;s look at the problem again, we are building a 10k tps system, so fast data retrieval is indispensable.</li>
+<li>For every data access, the server has to call the database to find the appropriate data. Of course this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.</li>
+</ul>
+<p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>catching</strong></p>
+<p>Let talk about <strong>catching</strong></p>
+<p>Caching improves page load times and can reduce the load on your servers and databases. In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.</p>
+<p>Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.</p>
+<p><img src="/posts/catching.png" alt=""></p>
+<p>In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.</p>
+<p>This way, when the data already exists in the cache, the system&rsquo;s data retrieval time will be significantly reduced.</p>
+</li>
+</ul>
 <h2 id="5-complete-system">5. Complete system</h2>
+<h2 id="6-further-issues-for-this-system">6. Further issues for this system</h2>
 
   </div>
   
