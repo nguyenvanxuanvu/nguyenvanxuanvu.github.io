@@ -3,47 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nguyenvanxuanvu.github.io/about/</loc>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nguyenvanxuanvu.github.io/categories/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/categories/development/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/tags/development/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/posts/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/categories/system/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/about/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,19 +33,48 @@
   </url>
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</loc>
+    <loc>https://nguyenvanxuanvu.github.io/posts/</loc>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/</loc>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/</loc>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/categories/system/</loc>
+    <lastmod>2022-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</loc>
+    <lastmod>2022-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/portfolio/</loc>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/portfolio/saveole/</loc>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</loc>
+    <lastmod>2021-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/portfolio/studentcare/</loc>
+    <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

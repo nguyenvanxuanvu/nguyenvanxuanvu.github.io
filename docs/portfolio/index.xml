@@ -5,29 +5,30 @@
     <link>https://nguyenvanxuanvu.github.io/portfolio/</link>
     <description>Recent content in Projects on Xuan Vu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://nguyenvanxuanvu.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>EASYPARKING</title>
-      <link>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</link>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</guid>
-      <description>Easy Parking - Parking rental and lease application, creating an environment for parking space renters and the leases to interact with each other. Thereby bringing benefits to both users. The application is built as a webapp.</description>
-    </item>
-    
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nguyenvanxuanvu.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SAVEOLE-FOOTBALL</title>
       <link>https://nguyenvanxuanvu.github.io/portfolio/saveole/</link>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://nguyenvanxuanvu.github.io/portfolio/saveole/</guid>
       <description>Saveole-football From the needs of the market, to meet the needs of a platform that helps users find a football field as well as effectively manage the chain of football fields of the stadium owner. A football field management system or a series of smart mini-ball courts allows stadium owners and customers who want to book a pitch to have more intelligent, automated, attractive and efficient field use and management services.</description>
     </item>
     
     <item>
+      <title>EASYPARKING</title>
+      <link>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</link>
+      <pubDate>Tue, 07 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</guid>
+      <description>Easy Parking - Parking rental and lease application, creating an environment for parking space renters and the leases to interact with each other. Thereby bringing benefits to both users. The application is built as a webapp.</description>
+    </item>
+    
+    <item>
       <title>STUDENT CARE SYSTEM</title>
       <link>https://nguyenvanxuanvu.github.io/portfolio/studentcare/</link>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://nguyenvanxuanvu.github.io/portfolio/studentcare/</guid>
       <description>Student care - The student care system of the online education system creates an environment for students to consult information, request information exchange with system staff, register to participate in events, &amp;hellip;</description>
