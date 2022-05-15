@@ -3,7 +3,7 @@ title: "SAVEOLE-FOOTBALL"
 description: "Pitch booking platform and device management"
 link: https://github.com/nguyenvanxuanvu/TT_CNPM
 screenshot: saveole.png
-date: '2019'
+date: '2022-04-25'
 layout: portfolio
 ---
 

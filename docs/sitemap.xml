@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nguyenvanxuanvu.github.io/categories/development/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
   </url>
@@ -23,27 +18,17 @@
   </url>
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/go/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/golang/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/categories/golang/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/hugo/</loc>
-    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nguyenvanxuanvu.github.io/posts/</loc>
+    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/categories/system/</loc>
+    <lastmod>2022-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,6 +53,11 @@
   </url>
   
   <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/hugo/</loc>
+    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nguyenvanxuanvu.github.io/portfolio/easyparking/</loc>
   </url>
   
@@ -77,6 +67,10 @@
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/portfolio/saveole/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/portfolio/studentcare/</loc>
   </url>
   
 </urlset>

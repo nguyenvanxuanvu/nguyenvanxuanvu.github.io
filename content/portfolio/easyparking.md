@@ -3,7 +3,7 @@ title: "EASYPARKING"
 description: "Easy way to rent and lease parking"
 link: https://github.com/nguyenvanxuanvu/EasyParking
 screenshot: easyparking.png
-date: '2019'
+date: '2021-12-07'
 layout: 'portfolio'
 ---
 

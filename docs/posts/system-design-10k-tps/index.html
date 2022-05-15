@@ -19,16 +19,16 @@
     
     
 
-<title>Design a system for serving blogs to massive readers (10k tps) • Xuan Vu</title>
+<title>System serve blogs to massive readers (10k tps) • Xuan Vu</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Design a system for serving blogs to massive readers (10k tps)"/>
+<meta name="twitter:title" content="System serve blogs to massive readers (10k tps)"/>
 <meta name="twitter:description" content="1. Introduction First of all, a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject.
 Today, there are more than 570 million blogs on the web.
 And what is the purpose of a blog?"/>
 
-<meta property="og:title" content="Design a system for serving blogs to massive readers (10k tps)" />
+<meta property="og:title" content="System serve blogs to massive readers (10k tps)" />
 <meta property="og:description" content="1. Introduction First of all, a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject.
 Today, there are more than 570 million blogs on the web.
 And what is the purpose of a blog?" />
@@ -180,7 +180,7 @@ And what is the purpose of a blog?" />
     
 <article>
   <header>
-    <h1>Design a system for serving blogs to massive readers (10k tps)</h1>
+    <h1>System serve blogs to massive readers (10k tps)</h1>
     
     
 <div class="post__meta">
@@ -198,7 +198,7 @@ And what is the purpose of a blog?" />
               <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
               •
           
-              <a class="badge badge-category" href="/categories/golang">GOLANG</a>
+              <a class="badge badge-category" href="/categories/system">SYSTEM</a>
               
           
       
@@ -210,22 +210,13 @@ And what is the purpose of a blog?" />
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/go">go</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/golang">golang</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/hugo">hugo</a>
-           
-      
           <a class="badge badge-tag" href="/tags/development">development</a>
           
       
     
     
     <br/>
-    <i class="fas fa-clock"></i> 3 min read
+    <i class="fas fa-clock"></i> 2 min read
 </div>
 
 
@@ -256,34 +247,11 @@ And what is the purpose of a blog?" />
 </ul>
 </li>
 </ul>
-<h2 id="step-3-change-the-docs-site">Step 3. Change the docs site</h2>
-<p>Stop the Hugo process by hitting ctrl+c.</p>
-<p>Now we are going to run hugo again, but this time with hugo in watch mode.</p>
-<pre><code>/path/to/hugo/from/step/1/hugo server --source=./docs --watch
-&gt; 29 pages created
-&gt; 0 tags index created
-&gt; in 27 ms
-&gt; Web Server is available at http://localhost:1313
-&gt; Watching for changes in /Users/spf13/Code/hugo/docs/content
-&gt; Press ctrl+c to stop
-</code></pre>
-<p>Open your <a href="http://vim.spf13.com">favorite editor</a> and change one of the source
-content pages. How about changing this very file to <em>fix the typo</em>. How about changing this very file to <em>fix the typo</em>.</p>
-<p>Content files are found in <code>docs/content/</code>. Unless otherwise specified, files
-are located at the same relative location as the url, in our case
-<code>docs/content/overview/quickstart.md</code>.</p>
-<p>Change and save this file.. Notice what happened in your terminal.</p>
-<pre><code>&gt; Change detected, rebuilding site
-
-&gt; 29 pages created
-&gt; 0 tags index created
-&gt; in 26 ms
-</code></pre>
-<p>Refresh the browser and observe that the typo is now fixed.</p>
-<p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building.. I double dare you.
-Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
-<h2 id="step-4-have-fun">Step 4. Have fun</h2>
-<p>The best way to learn something is to play with it.</p>
+<p>In this post, I choose to build a system for reading blogs. Other post data-oriented features such as sending messages or donations will be expanded in the future.</p>
+<p>As for the technology used and the specifics of the system, let&rsquo;s go to the next sections of the blog</p>
+<h2 id="3-main-architecture-for-my-system">3. Main architecture for my system</h2>
+<h2 id="4-some-ideas-for-mystem-to-gain-the-purpose-10k-tps">4. Some ideas for mystem to gain the purpose 10k tps</h2>
+<h2 id="5-complete-system">5. Complete system</h2>
 
   </div>
   

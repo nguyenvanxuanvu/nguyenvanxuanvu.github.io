@@ -2,15 +2,12 @@
 title = "Getting Started with Hugo"
 description = ""
 tags = [
-    "go",
-    "golang",
     "hugo",
     "development",
 ]
 date = "2022-05-12"
 categories = [
     "Development",
-    "golang",
 ]
 +++
 

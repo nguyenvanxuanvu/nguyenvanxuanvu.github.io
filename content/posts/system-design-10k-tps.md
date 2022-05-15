@@ -1,16 +1,13 @@
 +++
-title = "Design a system for serving blogs to massive readers (10k tps)"
+title = "System serve blogs to massive readers (10k tps)"
 description = ""
 tags = [
-    "go",
-    "golang",
-    "hugo",
     "development",
 ]
-date = "2022-05-13"
+date = "2022-05-11"
 categories = [
     "Development",
-    "golang",
+    "system",
 ]
 +++
 
@@ -39,41 +36,17 @@ After researching and asking some more experienced people, I think to build the 
 - **About technology:**
   - what technologies help your system achieve 10k tps ?
 
-## Step 3. Change the docs site
+In this post, I choose to build a system for reading blogs. Other post data-oriented features such as sending messages or donations will be expanded in the future. 
 
-Stop the Hugo process by hitting ctrl+c.
-
-Now we are going to run hugo again, but this time with hugo in watch mode.
-
-    /path/to/hugo/from/step/1/hugo server --source=./docs --watch
-    > 29 pages created
-    > 0 tags index created
-    > in 27 ms
-    > Web Server is available at http://localhost:1313
-    > Watching for changes in /Users/spf13/Code/hugo/docs/content
-    > Press ctrl+c to stop
+As for the technology used and the specifics of the system, let's go to the next sections of the blog
 
 
-Open your [favorite editor](http://vim.spf13.com) and change one of the source
-content pages. How about changing this very file to *fix the typo*. How about changing this very file to *fix the typo*.
+## 3. Main architecture for my system
 
-Content files are found in `docs/content/`. Unless otherwise specified, files
-are located at the same relative location as the url, in our case
-`docs/content/overview/quickstart.md`.
 
-Change and save this file.. Notice what happened in your terminal.
 
-    > Change detected, rebuilding site
+## 4. Some ideas for mystem to gain the purpose 10k tps
 
-    > 29 pages created
-    > 0 tags index created
-    > in 26 ms
+## 5. Complete system
 
-Refresh the browser and observe that the typo is now fixed.
 
-Notice how quick that was. Try to refresh the site before it's finished building.. I double dare you.
-Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.
-
-## Step 4. Have fun
-
-The best way to learn something is to play with it.
