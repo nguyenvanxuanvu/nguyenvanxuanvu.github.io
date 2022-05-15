@@ -88,7 +88,7 @@ With the design of the above sections, you can basically build a system for your
 
   Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
 
-  ![](/posts/catching.png)
+  ![](/posts/cache.jpg)
 
   In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.
 
