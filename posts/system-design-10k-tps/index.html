@@ -63,8 +63,8 @@ And what is the purpose of a blog?" />
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/hg.jpeg">
+    <link rel="shortcut icon" href="/hg.jpeg">
     
     
 
@@ -293,11 +293,13 @@ The client sends a request to the web server and the web server retrieves data f
 <p>Let talk about <strong>catching</strong></p>
 <p>Caching improves page load times and can reduce the load on your servers and databases. In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.</p>
 <p>Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.</p>
-<p><img src="/posts/catching.png" alt=""></p>
+<p><img src="/posts/cache.jpg" alt=""></p>
 <p>In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.</p>
 <p>This way, when the data already exists in the cache, the system&rsquo;s data retrieval time will be significantly reduced.</p>
 </li>
 </ul>
+<p><strong>The above two technologies are quite prominent with a large user system. But is that enough? The answer is no, there are many ways to apply other technology as well as combine methods for different objects in the system to improve your system more and more.</strong></p>
+<p>In this blog, I will point out some other issues as well as suggested technologies to improve the system:</p>
 <h2 id="5-complete-system">5. Complete system</h2>
 <h2 id="6-further-issues-for-this-system">6. Further issues for this system</h2>
 

@@ -80,9 +80,9 @@ With the design of the above sections, you can basically build a system for your
   - Let's look at the problem again, we are building a 10k tps system, so fast data retrieval is indispensable.
   - For every data access, the server has to call the database to find the appropriate data. Of course this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.
   
-  -> To solve this problem, we come to a kind of technology and its effect: **catching**
+  -> To solve this problem, we come to a kind of technology and its effect: **caching**
 
-  Let talk about **catching**
+  Let talk about **caching**
 
   Caching improves page load times and can reduce the load on your servers and databases. In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
 
@@ -93,6 +93,10 @@ With the design of the above sections, you can basically build a system for your
   In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.
 
   This way, when the data already exists in the cache, the system's data retrieval time will be significantly reduced.
+
+**The above two technologies are quite prominent with a large user system. But is that enough? The answer is no, there are many ways to apply other technology as well as combine methods for different objects in the system to improve your system more and more.**
+
+In this blog, I will point out some other issues as well as suggested technologies to improve the system:
 
 
 
