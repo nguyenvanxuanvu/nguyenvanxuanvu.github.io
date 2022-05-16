@@ -13,6 +13,14 @@ categories = [
     "system",
 ]
 +++
+### Table of contents
+
+  - [1. Introduction](#1-introduction)
+  - [2. Point out the problems](#2-point-out-the-problems)
+  - [3. Main architecture for my system](#3-main-architecture-for-my-system)
+  - [4. Some solutions for mystem to gain the purpose 10k tps](#4-some-solutions-for-mystem-to-gain-the-purpose-10k-tps)
+  - [5. Complete system](#5-complete-system)
+  - [6. Further issues for this system](#6-further-issues-for-this-system)
 
 ## 1. Introduction
 
@@ -40,6 +48,16 @@ After researching and asking some more experienced people, I think to build the 
   - what technologies help your system achieve 10k tps ?
 
 In this post, I choose to build a system for reading blogs. Other post-data-oriented features such as sending messages or donations will be expanded in the future. 
+
+Before going to solutions to help develop the system to achieve 10k tps, let's say something about **performance vs scalability**
+- **Performance**: "System performance is the amount of useful work done by a system - measured by the production speed of products of a predefined quality. System performance often boosts the competitiveness for high-tech Cyber-Physical Systems. To meet market demands for product quality, product customization and total cost of ownership per product, systems need to meet ever more ambitious performance targets relating to system productivity." (https://esi.nl/)
+- **Scalability**: "Scalability is the measure of a system’s ability to increase or decrease in performance and cost in response to changes in application and system processing demands." (https://www.gartner.com/). 
+
+  There are 2 types of scaling: Horizontally and vertically. Scaling horizontally and scaling vertically are similar in that they both involve adding computing resources to your infrastructure. There are distinct differences between the two in terms of implementation and performance:
+   - Horizontal scaling means scaling by adding more machines to your pool of resources (also described as “scaling out”).
+   - Vertical scaling refers to scaling by adding more power (e.g. CPU, RAM) to an existing machine (also described as “scaling up”).
+
+A service is scalable if it results in increased performance in a manner proportional to the resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow. As the title of the article states, in order for the system to reach massive readers, the above two concepts are indispensable.
 
 As for the technology used and the specifics of the system, let's go to the next sections of the blog
 
@@ -76,6 +94,8 @@ With the design of the above sections, you can basically build a system for your
   - Preventing overloading resources
   - Helping to eliminate a single point of failure
   
+  In the previous section, we also talked about two concepts of scalability, then with load blancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling. 
+
   ![](/posts/load-balancing.png)
   (Source image: www.f5.com) 
 
@@ -99,13 +119,39 @@ With the design of the above sections, you can basically build a system for your
 
   This way, when the data already exists in the cache, the system's data retrieval time will be significantly reduced.
 
+  There are many caching strategies: Client caching, CDN caching, Web server caching, Database caching, Application caching.
+
+
+
 **The above two technologies are quite prominent with a large user system. But is that enough? The answer is no, there are many ways to apply other technology as well as combine methods for different objects in the system to improve your system more and more.**
 
 In this blog, I will point out some other issues as well as suggested technologies to improve the system:
 
+- Bloggers, always want their blog posts to reach as many people as possible and in many places around the world. Not all viewers are located near where your system server is located, otherwise, it will take them considerable time to deliver Internet content.
+  
+  -> Because of this, system should use **CDN** (content delivery network):
 
+  ![](/posts/cdn.jpg)
+    (Source image: https://simplepage.vn/)
+
+  A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.
+
+  A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos.
+
+  The primary benefits of CDN:
+  - Improving website load times
+  - Reducing bandwidth costs
+  - Increasing content availability and redundancy
+  - Improving website security 
 
 ## 5. Complete system
+
+![](/posts/complete.png)
+
+This is my proposed complete design for system:
+  - Use load blancer between two layer: Client and Web server
+  - Use CDN distribute servers
+  - Use memory caching for web server
 
 ## 6. Further issues for this system
 
