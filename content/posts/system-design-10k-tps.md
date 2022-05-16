@@ -13,7 +13,7 @@ categories = [
 
 ## 1. Introduction
 
-First of all, a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject.
+First of all, "a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject" (https://firstsiteguide.com/).
 
 Today, there are more than 570 million blogs on the web.
 
@@ -74,6 +74,7 @@ With the design of the above sections, you can basically build a system for your
   - Helping to eliminate a single point of failure
   
   ![](/posts/load-balancing.png)
+  (Source image: www.f5.com) 
 
   Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
 - **Problem from web server to database layer:**
@@ -89,6 +90,7 @@ With the design of the above sections, you can basically build a system for your
   Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
 
   ![](/posts/cache.jpg)
+    (Source image: https://timviec365.com/)
 
   In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.
 
