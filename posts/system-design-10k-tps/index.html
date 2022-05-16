@@ -211,6 +211,15 @@ And what is the purpose of a blog?" />
            <i class="fas fa-tags"></i>
           
           <a class="badge badge-tag" href="/tags/development">development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/load-blancer">load blancer</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/caching">caching</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cdn">cdn</a>
           
       
     
@@ -229,15 +238,15 @@ And what is the purpose of a blog?" />
 <p>Today, there are more than 570 million blogs on the web.</p>
 <p><strong>And what is the purpose of a blog?</strong></p>
 <p>The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.</p>
-<p>So to grow in the long term and connect with more people, you need a system that can handle a large and effective traffic for your blog/homepage.</p>
+<p>So to grow in the long term and connect with more people, you need a system that can handle large and effective traffic for your blog/homepage.</p>
 <p>And in this blog, specific to the problem here is <strong>10000 transactions per second (10k tps)</strong>.</p>
-<p>To do that, let&rsquo;s work together to find solutions for your own system.</p>
+<p>To do that, let&rsquo;s work together to find solutions for your system.</p>
 <h2 id="2-point-out-the-problems">2. Point out the problems</h2>
 <p>After researching and asking some more experienced people, I think to build the system as mentioned above, we will encounter 2 main types of problems:</p>
 <ul>
 <li><strong>About product (blog):</strong>
 <ul>
-<li>Your blog is for the purpose of reading articles only ?</li>
+<li>Your blog is to read blogs only ?</li>
 <li>In addition to serving articles, you are also welcome to allow your readers to send you messages or do other things such as donate ?</li>
 </ul>
 </li>
@@ -247,7 +256,7 @@ And what is the purpose of a blog?" />
 </ul>
 </li>
 </ul>
-<p>In this post, I choose to build a system for reading blogs. Other post data-oriented features such as sending messages or donations will be expanded in the future.</p>
+<p>In this post, I choose to build a system for reading blogs. Other post-data-oriented features such as sending messages or donations will be expanded in the future.</p>
 <p>As for the technology used and the specifics of the system, let&rsquo;s go to the next sections of the blog</p>
 <h2 id="3-main-architecture-for-my-system">3. Main architecture for my system</h2>
 <p><img src="/posts/basic.png" alt=""></p>
@@ -288,7 +297,7 @@ The client sends a request to the web server and the web server retrieves data f
 <p><strong>Problem from web server to database layer:</strong></p>
 <ul>
 <li>Let&rsquo;s look at the problem again, we are building a 10k tps system, so fast data retrieval is indispensable.</li>
-<li>For every data access, the server has to call the database to find the appropriate data. Of course this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.</li>
+<li>For every data access, the server has to call the database to find the appropriate data. Of course, this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.</li>
 </ul>
 <p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>caching</strong></p>
 <p>Let talk about <strong>caching</strong></p>

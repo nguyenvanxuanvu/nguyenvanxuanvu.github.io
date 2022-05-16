@@ -3,6 +3,9 @@ title = "System serve blogs to massive readers (10k tps)"
 description = ""
 tags = [
     "development",
+    "load blancer",
+    "caching",
+    "cdn"
 ]
 date = "2022-05-11"
 categories = [
@@ -21,22 +24,22 @@ Today, there are more than 570 million blogs on the web.
 
 The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.
 
-So to grow in the long term and connect with more people, you need a system that can handle a large and effective traffic for your blog/homepage. 
+So to grow in the long term and connect with more people, you need a system that can handle large and effective traffic for your blog/homepage. 
 
 And in this blog, specific to the problem here is **10000 transactions per second (10k tps)**. 
 
-To do that, let's work together to find solutions for your own system.
+To do that, let's work together to find solutions for your system.
 
 ## 2. Point out the problems
 
 After researching and asking some more experienced people, I think to build the system as mentioned above, we will encounter 2 main types of problems:
 - **About product (blog):**
-  - Your blog is for the purpose of reading articles only ?
+  - Your blog is to read blogs only ?
   - In addition to serving articles, you are also welcome to allow your readers to send you messages or do other things such as donate ?
 - **About technology:**
   - what technologies help your system achieve 10k tps ?
 
-In this post, I choose to build a system for reading blogs. Other post data-oriented features such as sending messages or donations will be expanded in the future. 
+In this post, I choose to build a system for reading blogs. Other post-data-oriented features such as sending messages or donations will be expanded in the future. 
 
 As for the technology used and the specifics of the system, let's go to the next sections of the blog
 
@@ -79,7 +82,7 @@ With the design of the above sections, you can basically build a system for your
   Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
 - **Problem from web server to database layer:**
   - Let's look at the problem again, we are building a 10k tps system, so fast data retrieval is indispensable.
-  - For every data access, the server has to call the database to find the appropriate data. Of course this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.
+  - For every data access, the server has to call the database to find the appropriate data. Of course, this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.
   
   -> To solve this problem, we come to a kind of technology and its effect: **caching**
 
