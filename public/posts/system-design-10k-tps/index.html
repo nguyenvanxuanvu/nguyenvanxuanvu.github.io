@@ -19,15 +19,15 @@
     
     
 
-<title>System serve blogs to massive readers (10k tps) • Xuan Vu</title>
+<title>System serve blogs to massive readers (10k TPS) • Xuan Vu</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="System serve blogs to massive readers (10k tps)"/>
-<meta name="twitter:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for my system 4. Some solutions for mystem to gain the purpose 10k tps 5. Complete system 6. Further issues for this system  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top."/>
+<meta name="twitter:title" content="System serve blogs to massive readers (10k TPS)"/>
+<meta name="twitter:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for system 4. Some solutions for system to gain the purpose 10k TPS 5. Complete system 6. Further issues for this system 7. References  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top."/>
 
-<meta property="og:title" content="System serve blogs to massive readers (10k tps)" />
-<meta property="og:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for my system 4. Some solutions for mystem to gain the purpose 10k tps 5. Complete system 6. Further issues for this system  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top." />
+<meta property="og:title" content="System serve blogs to massive readers (10k TPS)" />
+<meta property="og:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for system 4. Some solutions for system to gain the purpose 10k TPS 5. Complete system 6. Further issues for this system 7. References  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/" />
 <meta property="article:published_time" content="2022-05-11T00:00:00+00:00" />
@@ -176,7 +176,7 @@
     
 <article>
   <header>
-    <h1>System serve blogs to massive readers (10k tps)</h1>
+    <h1>System serve blogs to massive readers (10k TPS)</h1>
     
     
 <div class="post__meta">
@@ -233,42 +233,43 @@
 <ul>
 <li><a href="#1-introduction">1. Introduction</a></li>
 <li><a href="#2-point-out-the-problems">2. Point out the problems</a></li>
-<li><a href="#3-main-architecture-for-my-system">3. Main architecture for my system</a></li>
-<li><a href="#4-some-solutions-for-mystem-to-gain-the-purpose-10k-tps">4. Some solutions for mystem to gain the purpose 10k tps</a></li>
+<li><a href="#3-main-architecture-for-system">3. Main architecture for system</a></li>
+<li><a href="#4-some-solutions-for-system-to-gain-the-purpose-10k-tps">4. Some solutions for system to gain the purpose 10k TPS</a></li>
 <li><a href="#5-complete-system">5. Complete system</a></li>
 <li><a href="#6-further-issues-for-this-system">6. Further issues for this system</a></li>
+<li><a href="#7-references">7. References</a></li>
 </ul>
 <h2 id="1-introduction">1. Introduction</h2>
-<p>First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject&rdquo; (<a href="https://firstsiteguide.com/)">https://firstsiteguide.com/)</a>.</p>
-<p>Today, there are more than 570 million blogs on the web.</p>
+<p>First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject&rdquo; (<a href="https://firstsiteguide.com/what-is-blog)">https://firstsiteguide.com/what-is-blog)</a>.</p>
+<p>Today, there are more than 570 million blogs on the web. (according to <strong>firstsiteguide</strong> - <a href="https://firstsiteguide.com/what-is-blog">https://firstsiteguide.com/what-is-blog</a>)</p>
 <p><strong>And what is the purpose of a blog?</strong></p>
 <p>The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.</p>
 <p>So to grow in the long term and connect with more people, you need a system that can handle large and effective traffic for your blog/homepage.</p>
-<p>And in this blog, specific to the problem here is <strong>10000 transactions per second (10k tps)</strong>.</p>
+<p>And in this blog, specific to the problem here is <strong>10000 transactions per second (10k TPS)</strong>.</p>
 <p>To do that, let&rsquo;s work together to find solutions for your system.</p>
 <h2 id="2-point-out-the-problems">2. Point out the problems</h2>
 <p>After researching and asking some more experienced people, I think to build the system as mentioned above, we will encounter 2 main types of problems:</p>
 <ul>
 <li><strong>About product (blog):</strong>
 <ul>
-<li>Your blog is to read blogs only ?</li>
+<li>Is your blog mainly a read-only blog?</li>
 <li>In addition to serving articles, you are also welcome to allow your readers to send you messages or do other things such as donate ?</li>
 </ul>
 </li>
 <li><strong>About technology:</strong>
 <ul>
-<li>what technologies help your system achieve 10k tps ?</li>
+<li>What technologies help your system achieve 10k TPS ?</li>
 </ul>
 </li>
 </ul>
 <p>In this post, I choose to build a system for reading blogs. Other post-data-oriented features such as sending messages or donations will be expanded in the future.</p>
-<p>Before going to solutions to help develop the system to achieve 10k tps, let&rsquo;s say something about <strong>performance vs scalability</strong></p>
+<p>Before going to solutions to help develop the system to achieve 10k TPS, let&rsquo;s say something about <strong>performance vs scalability</strong></p>
 <ul>
 <li>
-<p><strong>Performance</strong>: &ldquo;System performance is the amount of useful work done by a system - measured by the production speed of products of a predefined quality. System performance often boosts the competitiveness for high-tech Cyber-Physical Systems. To meet market demands for product quality, product customization and total cost of ownership per product, systems need to meet ever more ambitious performance targets relating to system productivity.&rdquo; (<a href="https://esi.nl/">https://esi.nl/</a>)</p>
+<p><strong>Performance</strong>: &ldquo;System performance is the amount of useful work done by a system - measured by the production speed of products of a predefined quality. System performance often boosts the competitiveness for high-tech Cyber-Physical Systems. To meet market demands for product quality, product customization and total cost of ownership per product, systems need to meet ever more ambitious performance targets relating to system productivity.&rdquo; (<a href="https://esi.nl">https://esi.nl</a>)</p>
 </li>
 <li>
-<p><strong>Scalability</strong>: &ldquo;Scalability is the measure of a system’s ability to increase or decrease in performance and cost in response to changes in application and system processing demands.&rdquo; (<a href="https://www.gartner.com/)">https://www.gartner.com/)</a>.</p>
+<p><strong>Scalability</strong>: &ldquo;Scalability is the measure of a system’s ability to increase or decrease in performance and cost in response to changes in application and system processing demands.&rdquo; (<a href="https://www.gartner.com">https://www.gartner.com</a>).</p>
 <p>There are 2 types of scaling: Horizontally and vertically. Scaling horizontally and scaling vertically are similar in that they both involve adding computing resources to your infrastructure. There are distinct differences between the two in terms of implementation and performance:</p>
 <ul>
 <li>Horizontal scaling means scaling by adding more machines to your pool of resources (also described as “scaling out”).</li>
@@ -278,21 +279,21 @@
 </ul>
 <p>A service is scalable if it results in increased performance in a manner proportional to the resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow. As the title of the article states, in order for the system to reach massive readers, the above two concepts are indispensable.</p>
 <p>As for the technology used and the specifics of the system, let&rsquo;s go to the next sections of the blog</p>
-<h2 id="3-main-architecture-for-my-system">3. Main architecture for my system</h2>
+<h2 id="3-main-architecture-for-system">3. Main architecture for system</h2>
 <p><img src="/posts/basic.png" alt=""></p>
 <p>With a simple system that can only read blogs with a small number of users, the above basic components are enough to operate the system.
 The client sends a request to the web server and the web server retrieves data from the database and returns the information to the client.</p>
 <p>Sounds simple right?</p>
 <p><strong>But for technology, it&rsquo;s never enough.</strong></p>
 <p>In order to meet a larger amount of data access and a larger number of users, and improve performance, the above system faces many problems that need to be solved.</p>
-<h2 id="4-some-solutions-for-mystem-to-gain-the-purpose-10k-tps">4. Some solutions for mystem to gain the purpose 10k tps</h2>
-<p>With the design of the above sections, you can basically build a system for your blog. However, some of the following problems will occur when you have a large amount of traffic, specifically here is 10k tps. Here are the 2 main issues:</p>
+<h2 id="4-some-solutions-for-system-to-gain-the-purpose-10k-tps">4. Some solutions for system to gain the purpose 10k TPS</h2>
+<p>With the design of the above sections, you can basically build a system for your blog. However, some of the following problems will occur when you have a large amount of traffic, specifically here is 10k TPS. Here are the 2 main issues:</p>
 <ul>
 <li>
 <p><strong>Problem from client to web server layer:</strong></p>
 <ul>
 <li>
-<p>When we use the server to run the website or run the software, but when the server has a problem, we can&rsquo;t access it anymore, all the work is delayed, to switch to a backup server, we have to It takes a lot of time, delays a lot of work.</p>
+<p>When we use the server to run the website or run the software, but when the server has a problem, we can&rsquo;t access it anymore, all the work is delayed, to switch to a backup server, we have to It takes a lot of time, delays a lot of work - It&rsquo;s called &ldquo;downtime&rdquo;.</p>
 </li>
 <li>
 <p>When many connections to a server cause that server to be overloaded but the backup server is not running at all, so we will not use up all the performance and the access speed will be reduced.</p>
@@ -302,7 +303,7 @@ The client sends a request to the web server and the web server retrieves data f
 </li>
 </ul>
 <p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>load balancer</strong></p>
-<p>Let talk about <strong>load balancer</strong></p>
+<p>Let&rsquo;s talk about <strong>load balancer</strong></p>
 <p>Load balancers distribute incoming client requests to computing resources such as application servers and databases. In each case, the load balancer returns the response from the computing resource to the appropriate client. Load balancers are effective at:</p>
 <ul>
 <li>Preventing requests from going to unhealthy servers</li>
@@ -312,23 +313,27 @@ The client sends a request to the web server and the web server retrieves data f
 <p>In the previous section, we also talked about two concepts of scalability, then with load blancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling.</p>
 <p><img src="/posts/load-balancing.png" alt="">
 (Source image: <a href="http://www.f5.com">www.f5.com</a>)</p>
-<p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.</p>
+<p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy, Nginx, AWS Elastic Load Balancing in cloud computing.</p>
+<p><img src="/posts/addblancer.png" alt="">
+(Add load balancer into system)</p>
 </li>
 <li>
 <p><strong>Problem from web server to database layer:</strong></p>
 <ul>
-<li>Let&rsquo;s look at the problem again, we are building a 10k tps system, so fast data retrieval is indispensable.</li>
+<li>Let&rsquo;s look at the problem again, we are building a 10k TPS system, so fast data retrieval is indispensable.</li>
 <li>For every data access, the server has to call the database to find the appropriate data. Of course, this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.</li>
 </ul>
 <p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>caching</strong></p>
-<p>Let talk about <strong>caching</strong></p>
+<p>Let&rsquo;s talk about <strong>caching</strong></p>
 <p>Caching improves page load times and can reduce the load on your servers and databases. In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.</p>
 <p>Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.</p>
 <p><img src="/posts/cache.jpg" alt="">
-(Source image: <a href="https://timviec365.com/">https://timviec365.com/</a>)</p>
+(Source image: <a href="https://timviec365.com">https://timviec365.com</a>)</p>
 <p>In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.</p>
 <p>This way, when the data already exists in the cache, the system&rsquo;s data retrieval time will be significantly reduced.</p>
 <p>There are many caching strategies: Client caching, CDN caching, Web server caching, Database caching, Application caching.</p>
+<p><img src="/posts/addcache.png" alt="">
+(Add memory cache into system)</p>
 </li>
 </ul>
 <p><strong>The above two technologies are quite prominent with a large user system. But is that enough? The answer is no, there are many ways to apply other technology as well as combine methods for different objects in the system to improve your system more and more.</strong></p>
@@ -338,7 +343,7 @@ The client sends a request to the web server and the web server retrieves data f
 <p>Bloggers, always want their blog posts to reach as many people as possible and in many places around the world. Not all viewers are located near where your system server is located, otherwise, it will take them considerable time to deliver Internet content.</p>
 <p>-&gt; Because of this, system should use <strong>CDN</strong> (content delivery network):</p>
 <p><img src="/posts/cdn.jpg" alt="">
-(Source image: <a href="https://simplepage.vn/">https://simplepage.vn/</a>)</p>
+(Source image: <a href="https://simplepage.vn">https://simplepage.vn</a>)</p>
 <p>A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.</p>
 <p>A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos.</p>
 <p>The primary benefits of CDN:</p>
@@ -361,7 +366,14 @@ The client sends a request to the web server and the web server retrieves data f
 <h2 id="6-further-issues-for-this-system">6. Further issues for this system</h2>
 <ul>
 <li>The homepage has a blog comment, send the message, donate feature &hellip;?</li>
-<li>What technologies or what changes exist components to achieve much more 10000 tps?</li>
+<li>What technologies or what changes exist components to achieve much more 10000 TPS?</li>
+</ul>
+<h2 id="7-references">7. References</h2>
+<ul>
+<li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer</a></li>
+<li><a href="https://www.f5.com/services/resources/glossary/load-balancer">Load blancer</a></li>
+<li><a href="https://aws.amazon.com/caching">What is cache and how it works</a></li>
+<li><a href="https://www.akamai.com/our-thinking/cdn/what-is-a-cdn">What is CDN</a></li>
 </ul>
 
   </div>
