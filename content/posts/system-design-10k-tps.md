@@ -154,5 +154,7 @@ This is my proposed complete design for system:
   - Use memory caching for web server
 
 ## 6. Further issues for this system
+- The homepage has a blog comment, send the message, donate feature ...?
+- What technologies or what changes exist components to achieve much more 10000 tps?
 
 
