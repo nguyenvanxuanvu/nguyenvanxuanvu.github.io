@@ -3,7 +3,7 @@ title = "System serve blogs to massive readers (10k TPS)"
 description = ""
 tags = [
     "development",
-    "load blancer",
+    "load balancer",
     "caching",
     "cdn"
 ]
