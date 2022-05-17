@@ -310,7 +310,7 @@ The client sends a request to the web server and the web server retrieves data f
 <li>Preventing overloading resources</li>
 <li>Helping to eliminate a single point of failure</li>
 </ul>
-<p>In the previous section, we also talked about two concepts of scalability, then with load blancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling.</p>
+<p>In the previous section, we also talked about two concepts of scalability, then with load balancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling.</p>
 <p><img src="/posts/load-balancing.png" alt="">
 (Source image: <a href="http://www.f5.com">www.f5.com</a>)</p>
 <p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy, Nginx, AWS Elastic Load Balancing in cloud computing.</p>
@@ -359,7 +359,7 @@ The client sends a request to the web server and the web server retrieves data f
 <p><img src="/posts/complete.png" alt=""></p>
 <p>This is my proposed complete design for system:</p>
 <ul>
-<li>Use load blancer between two layer: Client and Web server</li>
+<li>Use load balancer between two layer: Client and Web server</li>
 <li>Use CDN distribute servers</li>
 <li>Use memory caching for web server</li>
 </ul>
@@ -371,7 +371,7 @@ The client sends a request to the web server and the web server retrieves data f
 <h2 id="7-references">7. References</h2>
 <ul>
 <li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer</a></li>
-<li><a href="https://www.f5.com/services/resources/glossary/load-balancer">Load blancer</a></li>
+<li><a href="https://www.f5.com/services/resources/glossary/load-balancer">Load balancer</a></li>
 <li><a href="https://aws.amazon.com/caching">What is cache and how it works</a></li>
 <li><a href="https://www.akamai.com/our-thinking/cdn/what-is-a-cdn">What is CDN</a></li>
 </ul>

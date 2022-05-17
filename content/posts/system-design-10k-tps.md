@@ -94,7 +94,7 @@ With the design of the above sections, you can basically build a system for your
   - Preventing overloading resources
   - Helping to eliminate a single point of failure
   
-  In the previous section, we also talked about two concepts of scalability, then with load blancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling. 
+  In the previous section, we also talked about two concepts of scalability, then with load balancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling. 
 
   ![](/posts/load-balancing.png)
   (Source image: www.f5.com) 
@@ -153,7 +153,7 @@ In this blog, I will point out some other issues as well as suggested technologi
 ![](/posts/complete.png)
 
 This is my proposed complete design for system:
-  - Use load blancer between two layer: Client and Web server
+  - Use load balancer between two layer: Client and Web server
   - Use CDN distribute servers
   - Use memory caching for web server
 
@@ -163,6 +163,6 @@ This is my proposed complete design for system:
 
 ## 7. References
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Load blancer](https://www.f5.com/services/resources/glossary/load-balancer)
+- [Load balancer](https://www.f5.com/services/resources/glossary/load-balancer)
 - [What is cache and how it works](https://aws.amazon.com/caching)
 - [What is CDN](https://www.akamai.com/our-thinking/cdn/what-is-a-cdn)
