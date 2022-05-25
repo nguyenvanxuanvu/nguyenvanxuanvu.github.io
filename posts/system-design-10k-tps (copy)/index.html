@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/">
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.80.0" />
+
+    
+    
+    
+
+<title>System serve blogs to massive readers (10k TPS) • Xuan Vu</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="System serve blogs to massive readers (10k TPS)"/>
+<meta name="twitter:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for system 4. Some solutions for system to gain the purpose 10k TPS 5. Complete system 6. Further issues for this system 7. References  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top."/>
+
+<meta property="og:title" content="System serve blogs to massive readers (10k TPS)" />
+<meta property="og:description" content="Table of contents  1. Introduction 2. Point out the problems 3. Main architecture for system 4. Some solutions for system to gain the purpose 10k TPS 5. Complete system 6. Further issues for this system 7. References  1. Introduction First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nguyenvanxuanvu.github.io/posts/system-design-10k-tps/" />
+<meta property="article:published_time" content="2022-05-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-11T00:00:00+00:00" /><meta property="og:site_name" content="Nguyen" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.d3557f957f9db4a9cd4aac26c40b6ef1e96d23256ad56f7b407af46f9a567204.css" integrity="sha256-01V/lX&#43;dtKnNSqwmxAtu8eltIyVq1W97QHr0b5pWcgQ=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/hg.jpeg">
+    <link rel="shortcut icon" href="/hg.jpeg">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://nguyenvanxuanvu.github.io/">
+        
+          Xuan Vu
+        
+        </a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://nguyenvanxuanvu.github.io/img/ava.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Xuan Vu</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://facebook.com/xuanvu.nguyenvan" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/nguyenvanxuanvu" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/xuanvu231" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/nguy%e1%bb%85n-v%c4%83n-xu%c3%a2n-v%c5%a9-490b1b209" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:nguyenvanxuanvu231@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>System serve blogs to massive readers (10k TPS)</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 11, 2022
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/development">DEVELOPMENT</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/system">SYSTEM</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/development">development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/load-balancer">load balancer</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/caching">caching</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cdn">cdn</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h3 id="table-of-contents">Table of contents</h3>
+<ul>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-point-out-the-problems">2. Point out the problems</a></li>
+<li><a href="#3-main-architecture-for-system">3. Main architecture for system</a></li>
+<li><a href="#4-some-solutions-for-system-to-gain-the-purpose-10k-tps">4. Some solutions for system to gain the purpose 10k TPS</a></li>
+<li><a href="#5-complete-system">5. Complete system</a></li>
+<li><a href="#6-further-issues-for-this-system">6. Further issues for this system</a></li>
+<li><a href="#7-references">7. References</a></li>
+</ul>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>First of all, &ldquo;a blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. It is a platform where a writer or a group of writers share their views on an individual subject&rdquo; (<a href="https://firstsiteguide.com/what-is-blog)">https://firstsiteguide.com/what-is-blog)</a>.</p>
+<p>Today, there are more than 570 million blogs on the web. (according to <strong>firstsiteguide</strong> - <a href="https://firstsiteguide.com/what-is-blog">https://firstsiteguide.com/what-is-blog</a>)</p>
+<p><strong>And what is the purpose of a blog?</strong></p>
+<p>The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.</p>
+<p>So to grow in the long term and connect with more people, you need a system that can handle large and effective traffic for your blog/homepage.</p>
+<p>And in this blog, specific to the problem here is <strong>10000 transactions per second (10k TPS)</strong>.</p>
+<p>To do that, let&rsquo;s work together to find solutions for your system.</p>
+<h2 id="2-point-out-the-problems">2. Point out the problems</h2>
+<p>After researching and asking some more experienced people, I think to build the system as mentioned above, we will encounter 2 main types of problems:</p>
+<ul>
+<li><strong>About product (blog):</strong>
+<ul>
+<li>Is your blog mainly a read-only blog?</li>
+<li>In addition to serving articles, you are also welcome to allow your readers to send you messages or do other things such as donate ?</li>
+</ul>
+</li>
+<li><strong>About technology:</strong>
+<ul>
+<li>What technologies help your system achieve 10k TPS ?</li>
+</ul>
+</li>
+</ul>
+<p>In this post, I choose to build a system for reading blogs. Other post-data-oriented features such as sending messages or donations will be expanded in the future.</p>
+<p>Before going to solutions to help develop the system to achieve 10k TPS, let&rsquo;s say something about <strong>performance vs scalability</strong></p>
+<ul>
+<li>
+<p><strong>Performance</strong>: &ldquo;System performance is the amount of useful work done by a system - measured by the production speed of products of a predefined quality. System performance often boosts the competitiveness for high-tech Cyber-Physical Systems. To meet market demands for product quality, product customization and total cost of ownership per product, systems need to meet ever more ambitious performance targets relating to system productivity.&rdquo; (<a href="https://esi.nl">https://esi.nl</a>)</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: &ldquo;Scalability is the measure of a system’s ability to increase or decrease in performance and cost in response to changes in application and system processing demands.&rdquo; (<a href="https://www.gartner.com">https://www.gartner.com</a>).</p>
+<p>There are 2 types of scaling: Horizontally and vertically. Scaling horizontally and scaling vertically are similar in that they both involve adding computing resources to your infrastructure. There are distinct differences between the two in terms of implementation and performance:</p>
+<ul>
+<li>Horizontal scaling means scaling by adding more machines to your pool of resources (also described as “scaling out”).</li>
+<li>Vertical scaling refers to scaling by adding more power (e.g. CPU, RAM) to an existing machine (also described as “scaling up”).</li>
+</ul>
+</li>
+</ul>
+<p>A service is scalable if it results in increased performance in a manner proportional to the resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow. As the title of the article states, in order for the system to reach massive readers, the above two concepts are indispensable.</p>
+<p>As for the technology used and the specifics of the system, let&rsquo;s go to the next sections of the blog</p>
+<h2 id="3-main-architecture-for-system">3. Main architecture for system</h2>
+<p><img src="/posts/basic.png" alt=""></p>
+<p>With a simple system that can only read blogs with a small number of users, the above basic components are enough to operate the system.
+The client sends a request to the web server and the web server retrieves data from the database and returns the information to the client.</p>
+<p>Sounds simple right?</p>
+<p><strong>But for technology, it&rsquo;s never enough.</strong></p>
+<p>In order to meet a larger amount of data access and a larger number of users, and improve performance, the above system faces many problems that need to be solved.</p>
+<h2 id="4-some-solutions-for-system-to-gain-the-purpose-10k-tps">4. Some solutions for system to gain the purpose 10k TPS</h2>
+<p>With the design of the above sections, you can basically build a system for your blog. However, some of the following problems will occur when you have a large amount of traffic, specifically here is 10k TPS. Here are the 2 main issues:</p>
+<ul>
+<li>
+<p><strong>Problem from client to web server layer:</strong></p>
+<ul>
+<li>
+<p>When we use the server to run the website or run the software, but when the server has a problem, we can&rsquo;t access it anymore, all the work is delayed, to switch to a backup server, we have to It takes a lot of time, delays a lot of work - It&rsquo;s called &ldquo;downtime&rdquo;.</p>
+</li>
+<li>
+<p>When many connections to a server cause that server to be overloaded but the backup server is not running at all, so we will not use up all the performance and the access speed will be reduced.</p>
+</li>
+<li>
+<p>The system will reduce security because users can directly access the server.</p>
+</li>
+</ul>
+<p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>load balancer</strong></p>
+<p>Let&rsquo;s talk about <strong>load balancer</strong></p>
+<p>Load balancers distribute incoming client requests to computing resources such as application servers and databases. In each case, the load balancer returns the response from the computing resource to the appropriate client. Load balancers are effective at:</p>
+<ul>
+<li>Preventing requests from going to unhealthy servers</li>
+<li>Preventing overloading resources</li>
+<li>Helping to eliminate a single point of failure</li>
+</ul>
+<p>In the previous section, we also talked about two concepts of scalability, then with load balancer: Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called Vertical Scaling.</p>
+<p><img src="/posts/load-balancing.png" alt="">
+(Source image: <a href="http://www.f5.com">www.f5.com</a>)</p>
+<p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy, Nginx, AWS Elastic Load Balancing in cloud computing.</p>
+<p><img src="/posts/addblancer.png" alt="">
+(Add load balancer into system)</p>
+</li>
+<li>
+<p><strong>Problem from web server to database layer:</strong></p>
+<ul>
+<li>Let&rsquo;s look at the problem again, we are building a 10k TPS system, so fast data retrieval is indispensable.</li>
+<li>For every data access, the server has to call the database to find the appropriate data. Of course, this is acceptable for a system with a small number of users, but given the problem, it reduces performance significantly and will not be able to handle a large amount of traffic.</li>
+</ul>
+<p>-&gt; To solve this problem, we come to a kind of technology and its effect: <strong>caching</strong></p>
+<p>Let&rsquo;s talk about <strong>caching</strong></p>
+<p>Caching improves page load times and can reduce the load on your servers and databases. In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.</p>
+<p>Databases often benefit from a uniform distribution of reads and writes across its partitions. Popular items can skew the distribution, causing bottlenecks. Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.</p>
+<p><img src="/posts/cache.jpg" alt="">
+(Source image: <a href="https://timviec365.com">https://timviec365.com</a>)</p>
+<p>In this diagram, You will see the steps the system looks for when using the cache. First of all, the dispatcher will search for data in the cache first, when it is not in the cache, it will search the database and save it in the cache.</p>
+<p>This way, when the data already exists in the cache, the system&rsquo;s data retrieval time will be significantly reduced.</p>
+<p>There are many caching strategies: Client caching, CDN caching, Web server caching, Database caching, Application caching.</p>
+<p><img src="/posts/addcache.png" alt="">
+(Add memory cache into system)</p>
+</li>
+</ul>
+<p><strong>The above two technologies are quite prominent with a large user system. But is that enough? The answer is no, there are many ways to apply other technology as well as combine methods for different objects in the system to improve your system more and more.</strong></p>
+<p>In this blog, I will point out some other issues as well as suggested technologies to improve the system:</p>
+<ul>
+<li>
+<p>Bloggers, always want their blog posts to reach as many people as possible and in many places around the world. Not all viewers are located near where your system server is located, otherwise, it will take them considerable time to deliver Internet content.</p>
+<p>-&gt; Because of this, system should use <strong>CDN</strong> (content delivery network):</p>
+<p><img src="/posts/cdn.jpg" alt="">
+(Source image: <a href="https://simplepage.vn">https://simplepage.vn</a>)</p>
+<p>A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.</p>
+<p>A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos.</p>
+<p>The primary benefits of CDN:</p>
+<ul>
+<li>Improving website load times</li>
+<li>Reducing bandwidth costs</li>
+<li>Increasing content availability and redundancy</li>
+<li>Improving website security</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-complete-system">5. Complete system</h2>
+<p><img src="/posts/complete.png" alt=""></p>
+<p>This is my proposed complete design for system:</p>
+<ul>
+<li>Use load balancer between two layer: Client and Web server</li>
+<li>Use CDN distribute servers</li>
+<li>Use memory caching for web server</li>
+</ul>
+<h2 id="6-further-issues-for-this-system">6. Further issues for this system</h2>
+<ul>
+<li>The homepage has a blog comment, send the message, donate feature &hellip;?</li>
+<li>What technologies or what changes exist components to achieve much more 10000 TPS?</li>
+</ul>
+<h2 id="7-references">7. References</h2>
+<ul>
+<li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer</a></li>
+<li><a href="https://www.f5.com/services/resources/glossary/load-balancer">Load balancer</a></li>
+<li><a href="https://aws.amazon.com/caching">What is cache and how it works</a></li>
+<li><a href="https://www.akamai.com/our-thinking/cdn/what-is-a-cdn">What is CDN</a></li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+    <a href="/posts/hugoisforlovers/" class="navigation-next">
+      <span class="navigation-tittle">Getting Started with Hugo</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>
