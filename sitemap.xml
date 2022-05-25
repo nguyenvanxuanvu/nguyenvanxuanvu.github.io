@@ -3,17 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/about/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+    <loc>https://nguyenvanxuanvu.github.io/posts/backend-thinking/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/categories/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/cdn/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nguyenvanxuanvu.github.io/categories/development/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/linux/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/posts/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/shell/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/categories/system/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/tags/unix/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nguyenvanxuanvu.github.io/about/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,37 +78,12 @@
   </url>
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/posts/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nguyenvanxuanvu.github.io/tags/caching/</loc>
     <lastmod>2022-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nguyenvanxuanvu.github.io/tags/cdn/</loc>
-    <lastmod>2022-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nguyenvanxuanvu.github.io/tags/load-balancer/</loc>
-    <lastmod>2022-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nguyenvanxuanvu.github.io/categories/system/</loc>
     <lastmod>2022-05-11T00:00:00+00:00</lastmod>
   </url>
   
