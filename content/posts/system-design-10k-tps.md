@@ -29,6 +29,9 @@ First of all, "a blog (a shortened version of “weblog”) is an online journal
 Today, there are more than 570 million blogs on the web. (according to **firstsiteguide** - https://firstsiteguide.com/what-is-blog)
 
 **And what is the purpose of a blog?**
+// TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTt
+
+------------------------------
 
 The main purpose of a blog is to connect you to the relevant audience. Another one is to boost your traffic and send quality leads to your website.
 
