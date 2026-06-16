@@ -13,7 +13,7 @@ redirect_from:
 Education
 ======
 * Ho Chi Minh university of technology - Ho Chi Minh city Computer science, 2019 - 2023
-* Quoc Hoc high school - Hue city Mathematics, 2026 - 2019
+* Quoc Hoc high school - Hue city Mathematics, 2016 - 2019
 
 
 
