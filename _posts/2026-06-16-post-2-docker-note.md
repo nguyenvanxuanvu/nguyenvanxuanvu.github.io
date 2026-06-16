@@ -7,16 +7,6 @@ tags:
 ---
 ---
 
-### Table of contents
-
-  - [1. Introduction](#1-introduction)
-  - [2. Point out the problems](#2-point-out-the-problems)
-  - [3. Main architecture for system](#3-main-architecture-for-system)
-  - [4. Some solutions for system to gain the purpose 10k TPS](#4-some-solutions-for-system-to-gain-the-purpose-10k-tps)
-  - [5. Complete system](#5-complete-system)
-  - [6. Further issues for this system](#6-further-issues-for-this-system)
-  - [7. References](#7-references)
-
 ## 1. Definition
     - Container: Completely isolated environments, they can have their own processes or services, their own network interfaces, their own mounts, just like VM, except all share the same OS kernel.
     - OCI: Open Container Initiative
