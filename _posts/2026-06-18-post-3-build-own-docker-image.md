@@ -1,4 +1,14 @@
-# Build Custom Golang Base Image & Push to Docker Hub
+---
+title:  "Build Custom Base Image & Push to Hub"
+date: 2026-06-16
+permalink: /posts/post-3
+tags:
+  - docker
+  - custom
+---
+---
+
+# Example: Build Custom Golang Base Image & Push to Docker Hub
 
 ## Step 1: Create Dockerfile with golang:1.21-alpine + Extra Packages
 
